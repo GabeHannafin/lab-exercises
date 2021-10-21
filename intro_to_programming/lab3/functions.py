@@ -6,7 +6,7 @@
 # Pseudocode
 '''
 Prompt 'Enter the name of team 1:' and store in team1
-• Prompt 'Enter the name of team 2:' and store in team2
+• Prompt 'Enter the name of team 2:' and store in team2 
 • Prompt 'Enter the number of tries for ' + team1 and store in tries_for_team1
 • Prompt 'Enter the number of tries for ' + team2 and store in tries_for_team2
 • Prompt 'Enter the number of converted/penalty for' + team1 and store in points
@@ -82,3 +82,7 @@ def calc_pace():
 
 if __name__ == "__main__":
     ages()
+    calc_seconds()
+    calc_miles()
+    calc_pace()
+    

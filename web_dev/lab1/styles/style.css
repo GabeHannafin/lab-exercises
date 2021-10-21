@@ -1,9 +1,32 @@
-
 table {
-	border-collapse;
+	border-collapse: collapse;
+	width: 50%;
 }
 
 td, th {
-	border: 1px solid black;
+	border: 2px solid black;
 	text-align: center;
+	height: 70px;
+}
+
+h1 {
+	font-size: 40px;
+}
+
+h2, caption {
+	font-size: 35px;
+}
+
+body {
+	background-color: #909090;
+}
+
+p {
+	font-size: 20px;
+	color: blue;
+	font-weight: bold;
+}
+
+.big {
+	font-size: 200px;
 }
