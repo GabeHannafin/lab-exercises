@@ -19,6 +19,7 @@ def main():
     seperated_input("doofenshmirtz","incorporated", " Evil ", "!!!\n")
     three_numbers(3,2,3)
     seasons(0)
+    grades(89)
 
 if __name__ == "__main__":
     ''' call the main() function in this file '''

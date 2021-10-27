@@ -30,16 +30,39 @@ def seasons(number):
 #    number = input("Plz give me  a number between 1 and 4:  ")
     try:
             
-        if number > 4 | number < 1:
+        if number > 4 or number < 1:
             print("Number entered", number, "is outside of input values")
+
         elif number == 1:
             print("Winter")
+
         elif number == 2:
             print("Spring")
+
         elif number == 3:
             print("Summer")
+
         elif number == 4:
             print("Autumn")
 
     except TypeError:
         print("Please input a number babes")
+
+def grades(number):
+    if number in range(85, 100):
+        print("Congrats you got an A!")
+
+    elif number in range(70, 84):
+        print("Not bad,you got a B")
+
+    elif number in range(55, 66):
+        print("Eh, a C isn't awful I guess...")
+
+    elif number in range(40, 54):
+        print("This is disappointing, a D????")
+
+    elif number in range(25, 39):
+        print("You disgust me, you got an E")
+
+    elif number in range(0 , 4):
+        print("HOW DARE YOU?? AN F??")
