@@ -18,7 +18,7 @@ def main():
     seperated_input("phineas", "ferb", " and ", "rock!!\n")
     seperated_input("doofenshmirtz","incorporated", " Evil ", "!!!\n")
     three_numbers(3,2,3)
-    seasons("bleh")
+    seasons(0)
 
 if __name__ == "__main__":
     ''' call the main() function in this file '''

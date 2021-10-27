@@ -28,21 +28,18 @@ def seasons(number):
     THis function asks the user for a number and returns the corrosponding seasons, also responds with an error if the wrong number is entered
     """
 #    number = input("Plz give me  a number between 1 and 4:  ")
+    try:
+            
+        if number > 4 | number < 1:
+            print("Number entered", number, "is outside of input values")
+        elif number == 1:
+            print("Winter")
+        elif number == 2:
+            print("Spring")
+        elif number == 3:
+            print("Summer")
+        elif number == 4:
+            print("Autumn")
 
-    if number == 1:
-        print("Winter")
-
-    elif number == 2:
-        print("Spring")
-
-    elif number == 3:
-        print("Summer")
-
-    elif number == 4:
-        print("Autumn")
-
-    elif number > 4:
-        print("Number entered", number, "is outside of input values")
-
-    else:
-        print("Input value must be a number")
+    except TypeError:
+        print("Please input a number babes")
