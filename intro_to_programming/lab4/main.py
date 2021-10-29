@@ -1,5 +1,5 @@
 # ScriptName: main.py
-# Author: <add your name here>
+# Author: Gabe
 
 # template for calling functions in another file
 
@@ -14,13 +14,8 @@ def main():
     """
     Call the functions defined in the functions.py file
     """
-#    print_function()
-    seperated_input("phineas", "ferb", " and ", " rock!!\n")
-    seperated_input("doofenshmirtz","incorporated", " Evil ", "!!!\n")
-    three_numbers(3,2,3)
-    seasons(0)
-    grades(56)
-    print(equal_numbers(24,25))
+
+    seasons("5")
 
 if __name__ == "__main__":
     ''' call the main() function in this file '''

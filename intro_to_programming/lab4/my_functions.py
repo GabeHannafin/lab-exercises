@@ -28,61 +28,77 @@ def three_numbers(number_1, number_2, number_3):
 
 def seasons(number):
     """
-    THis function asks the user for a number and returns the corrosponding seasons, also responds with an error if the wrong number is entered
+    Write a function called seasons(), that has a parameter called number.
+    Ask the user for a  number, and pass this number to the function.
+    Depending on the number passed to the function, the function will return
+    the corresponding season of the year where 1=Winter, 2=Spring, 3=Summer, and 4
+    = Autumn.  Add code to returnan error message if any other number is
+    entered
     """
-#    number = input("Plz give me  a number between 1 and 4:  ")
-    try:
-            
-        if number > 4 or number < 1:
-            print("Number entered", number, "is outside of input values")
+    if type(number) != int:    
+            print("Input value must be a number")
 
-        elif number == 1:
-            print("Winter")
+    elif number > 4 or number < 1:
+        print("Number entered", number, "is outside of input values")
 
-        elif number == 2:
-            print("Spring")
+    elif number == 1:
+        print("Winter")
 
-        elif number == 3:
-            print("Summer")
+    elif number == 2:
+        print("Spring")
 
-        elif number == 4:
-            print("Autumn")
+    elif number == 3:
+        print("Summer")
 
-    except TypeError:
-        print("Please input a number babes")
+    elif number == 4:
+        print("Autumn")
+
 
 def grades(number):
+    '''
+    Write a function called seasons(), that has a parameter called number.
+    Ask the user for a  number, and pass this number to the function.
+    Depending on the number passed to the function, the function will return
+    the corresponding season of the year where
+    1=Winter, 2=Spring, 3=Summer, and 4 = Autumn.
+    Add code to return an error message if any other number is entered:
+    '''
 
-    try:
+    # Check if the an int is specified
+        if type(number) != int:
+            print("Input value must be a number")
 
-        if number < 0 or number > 100:
-            print("Your Grade is X")
+        elif number < 0 or number > 100:
+            print("X")
 
         elif number in range(85, 100):
-            print("Congrats you got an A!")
+            print("A")
 
         elif number in range(70, 84):
-            print("Not bad,you got a B")
+            print("B")
 
         elif number in range(55, 66):
-            print("Eh, a C isn't awful I guess...")
+            print("C")
 
         elif number in range(40, 54):
-            print("This is disappointing, a D????")
+            print("D")
 
         elif number in range(25, 39):
-            print("You disgust me, you got an E")
+            print("E")
 
         elif number in range(0 , 4):
-            print("HOW DARE YOU?? AN F??")
-
-    except TypeError:
-
-        print("Input value must be a number")
+            print("F")
 
 
 def equal_numbers(number_1, number_2):
-    
+    '''
+    Ask the user for 2 numbers, and pass these 2 numbers to a function called equal_numbers().
+    If the two numbers are equal, then return the square root ofthe number as a float
+    (Use import mathat the top of your program to import the math library and use the command math.sqrt()
+    e.g math sqrt (25.0) gives 5.0).
+    If the two numbers are not equal, then return the squares of both numbers as integers.
+    '''
+        # Error handling: check if type is int
         if type(number_1) != int or type(number_2) != int:
             print("Input value(s) must be a number")
 
@@ -92,5 +108,5 @@ def equal_numbers(number_1, number_2):
 
         elif (number_1 != number_2):
             answer1_int = int(number_1 ** 2)
-            answer2_int = int(number_2 ** 2)
+            answer2_int = int(number_2 ** 2)    
             return (answer1_int, answer2_int)
