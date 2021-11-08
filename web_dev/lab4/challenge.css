@@ -1,0 +1,34 @@
+body {
+    background:   #90ee90;
+    color:  #fff;
+}
+
+.question {
+    color:  #fff;
+    background:   black;
+}
+
+p {
+    color:  blue;
+}
+
+p > em, p > b {
+    color:  red;
+}
+
+#bow li {
+    background:   #663399;
+}
+
+#reading li{
+    color:  blue;
+    background:   #fff;
+}
+
+#reading li:last-child {
+   color:   red;
+}
+
+li > i, #reading h1 {
+    color:  black;
+}
