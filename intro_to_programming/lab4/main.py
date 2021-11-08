@@ -14,9 +14,9 @@ def main():
     """
     Call the functions defined in the functions.py file
     """
-
+    grades(45)
     seasons("5")
-
+    grades("A")
 if __name__ == "__main__":
     ''' call the main() function in this file '''
     main()
