@@ -18,9 +18,11 @@ def fizz_buzz(num1, divisor_1=1, divisor_2=1):
     call are shown:
     '''
     '''
-    a. If input is the wrong type the function throwns a type erro because it cannot do
+    a. If input is the wrong type the function throwns a type error because it cannot do
         operations on a string
     b. Originally if num1 was not divisable by either divisor it returned none.
+    c. If num1 is 0 then 0 % divisor_1 or 0 % divisor_2 is 0 so it returns
+    FizzBuzz
     '''
 
     # checking type for int
@@ -43,7 +45,7 @@ def fizz_buzz(num1, divisor_1=1, divisor_2=1):
                 return num1
 
 
-        if divisor_1 != 1 and divisor_2 != 1:
+        elif divisor_1 != 1 and divisor_2 != 1:
 
             if (num1 % divisor_1 == 0) and (num1 % divisor_2 != 0):
                 return "Fizz"
@@ -60,6 +62,7 @@ def fizz_buzz(num1, divisor_1=1, divisor_2=1):
     except TypeError:
         return "Input value(s) must be a number'"
 
+
 def grades(number):
     '''
     Write a function called seasons(), that has a parameter called number.
@@ -69,11 +72,12 @@ def grades(number):
     1=Winter, 2=Spring, 3=Summer, and 4 = Autumn.
     Add code to return an error message if any other number is entered:
     '''
+
     '''
-    a. 
+    a. If the letter supplied is lowercase the function returns its out of range
+    (fix is converting the number param to uppercase before using it in the code)
     '''
 
-    # Check if the an int is specified
     # This part controls the function if the paramater is a int
     if type(number) == int:
 
@@ -95,11 +99,13 @@ def grades(number):
         elif number in range(0 , 5):
                 return "F"
 
-        elif number > 100:
+        elif number < 0 or number > 100:
             return "The input numerical grade is outside the range supported"
 
     # This part controls the funtion when the paramater is a string
-    if type(number) == str:
+    elif type(number) == str:
+
+        number = number.upper() 
 
         if number == "A":
             return "85-100"
@@ -118,6 +124,7 @@ def grades(number):
 
         elif number == "F":
             return "0-4"
+
         else:
             return "The input letter grade is outside the range supported"
 

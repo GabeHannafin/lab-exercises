@@ -65,28 +65,28 @@ def grades(number):
     '''
 
     # Check if the an int is specified
-        if type(number) != int:
+    if type(number) != int:
             print("Input value must be a number")
 
-        elif number < 0 or number > 100:
+    elif number < 0 or number > 100:
             print("X")
 
-        elif number in range(85, 100):
+    elif number in range(85, 100):
             print("A")
 
-        elif number in range(70, 84):
+    elif number in range(70, 84):
             print("B")
 
-        elif number in range(55, 66):
+    elif number in range(55, 66):
             print("C")
 
-        elif number in range(40, 54):
+    elif number in range(40, 54):
             print("D")
 
-        elif number in range(25, 39):
+    elif number in range(25, 39):
             print("E")
 
-        elif number in range(0 , 4):
+    elif number in range(0 , 4):
             print("F")
 
 
@@ -99,14 +99,14 @@ def equal_numbers(number_1, number_2):
     If the two numbers are not equal, then return the squares of both numbers as integers.
     '''
         # Error handling: check if type is int
-        if type(number_1) != int or type(number_2) != int:
+    if type(number_1) != int or type(number_2) != int:
             print("Input value(s) must be a number")
 
-        elif (number_1 == number_2):
+    elif (number_1 == number_2):
             answer_float = float(math.sqrt(number_1))
             return answer_float
 
-        elif (number_1 != number_2):
+    elif (number_1 != number_2):
             answer1_int = int(number_1 ** 2)
             answer2_int = int(number_2 ** 2)    
             return (answer1_int, answer2_int)
