@@ -14,8 +14,7 @@ def main():
     """
     Call the functions defined in the functions.py file
     """
-
-    seasons("5")
+    print(grades())
 
 if __name__ == "__main__":
     ''' call the main() function in this file '''
