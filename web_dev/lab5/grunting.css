@@ -1,0 +1,72 @@
+@font-face {
+    font-family:    HeadingFont;
+    src:    url('/fonts/Carnevalee Freakshow.ttf');
+}
+@font-face {
+    font-family:    BodyFont;
+    src:    url('/fonts/good times rg.ttf');
+}
+
+:root {
+    font-size:  20px;
+}
+
+html {
+    background-image:   url('images/image01.jpg');
+}
+
+body {
+    background-color:   #CD7F32;
+    border: 3px solid black;
+    margin: 2em 2em;
+    padding: 2em 2em;
+    border-radius:  3em;
+}
+
+header {
+    font-family:    HeadingFont;
+    font-size: 1.2em;
+    background-color:   #CD7F32;
+    border: 2px solid #6E260E;
+    padding: 2em 1em;
+    border-radius: 2em;
+    background-image: url("/images/image02.png");
+    background-size: 100% 100%;
+}
+
+h1, h2 { 
+    display:    block;
+    border: 1px solid #800000;
+    background-color: #800000;
+    margin: 1em 1.5em;
+    text-align: center;
+    border-radius: 0.2em;
+    font-family:    HeadingFont;
+}
+
+section {
+    border: 1px solid #6E260E;
+    margin: 1em;
+    border-radius: 2em;
+    padding: 0.5em 2em;
+}
+
+p, li {
+    font-family:    Avantgarde, sans-serif;
+    font-size:  0.88888888em;
+    text-align: left;
+}
+
+h2 + p::first-letter {
+    float: left;
+    line-height: 1;
+    font-size: 2.5em;
+    font-family: Cambria;
+}
+
+footer {
+    border: 1px solid #6E260E;
+    padding: 0.5em 1em;
+    border-radius: 2em;
+}
+
