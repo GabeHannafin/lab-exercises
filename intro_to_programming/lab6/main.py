@@ -19,8 +19,7 @@ def main():
     # Something is broken here with question 2 on rotator
     print(slice_reverse("abcda"))
     print(add_to_list(5,5))
-
-
+    print(add_to_list_no_sort(5, [3,1,7,9]))
 if __name__ == "__main__":
     ''' call the main() function in this file '''
     main()

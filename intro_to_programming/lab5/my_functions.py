@@ -7,7 +7,7 @@
 def print_function():
     print("I'm in another file :)")
 
-def fizz_buzz(num1, divisor_1=1, divisor_2=1):
+def fizz_buzz(num1, divisor_1=3, divisor_2=5):
     '''
     Pass a number, as parameter num1, to a function called fizz_buzz() For
     multiples of 3, return “Fizz”. For multiples of 5, return “Buzz”. For

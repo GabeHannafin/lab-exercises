@@ -20,8 +20,8 @@ def seasons(number):
     if type(number) != int:    
         return "Input value must be a number"
 
-    elif number > 4 or number < 1:
-     return "Number entered " + str(number) + " is outside of input values"
+    if number > 4 or number < 1:
+         return f"Number entered {number} is outside of input values"
 
     else:
         return seasons[number -1]
@@ -35,9 +35,12 @@ def slice_reverse(input_value):
     Python reverse() function
     """ 
     input_value = str(input_value)
+    print(input_value)
+    print(input_value[::-1])
 
     if (input_value == input_value[::-1]):
         return True
+
     else:
         return False
 
@@ -67,39 +70,25 @@ def add_to_list(value="", list=[]):
     return list
    
 def add_to_list_no_sort(value, list):
-    '''
-    it may look as if i have not put any time into this and didn't get it done
-    but i most definitely spent hours and hours trying to make this work, alas
-    i'm a dumbass
-'''
-    return
-#    i = 0
-#    sorted_list = []
-#    list.append(value)
-#
-#
-#    while list:
-#        if i == (len(list)):
-#            i = 0
-#            sorted_list.append(list[0])
-#            list.remove(list[0])
-#        elif list[i] < list[0]:
-#            sorted_list.append(list[i])
-#            list.remove(list[i])
-#        
-#        i += 1 
-#        
-#
-#    return sorted_list, list, i
+    i = 1
+    list.append(value)
+    org_list = []
+#    try:
 
-#    while j < len(list):
-#        print(i)
-#        if i == (len(list)-1):
-#            i = 0
-#            j += 1
-#
-#        if list[i] < list[j]:
-#            org_list.insert(0, list[i])
-#            del list[0]
-#
-#        i += 1
+#    except Exception:
+#        return "Incorrect value defined for param list"
+    # attempt to sort the list, or return an error 
+#    try:
+    while i < len(list):
+
+        org_list.insert(i, list[i])
+        i += 1
+
+        return list
+        return org_list
+
+#    except TypeError:
+#    return "sort() does not like this mixture of elements"
+
+    return list
+    
