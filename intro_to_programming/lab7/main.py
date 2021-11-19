@@ -1,4 +1,3 @@
-# ScriptName: main.py
 # Author: Gabe
 
 # template for calling functions in another file
@@ -21,26 +20,26 @@ def main():
     # print(count([1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 3, 2, 1], 8))
     # print(count("hello", "l"))
     # print(count("hello", "h"))
-    print(count("name", 1))
+    # print(count("name", "a"))
 
     # test index
-    print(index("hello", "o"))
-    print(index("hello", "p"))
+    # print(index("name", "i"))
+    # print(index("hello", "p"))
 
     # test get_value
-    print(get_value("hello", "4"))
+    # print(get_value([], 1))
 
-    # test insert
-    print(insert("hello", 8, "t"))
+    ## test insert
+    # print(insert(454545454, 4, "t"))
 
-    # test value_in_list
-    print(value_in_list("hello", "t"))
+    ## test value_in_list
+    # print(value_in_list(5.6, "t"))
 
-    # test concat
-    print(concat("bleg ", "bleg"))
+    ## test concat
+    # print(concat(("sydney", "gabe"), ("fuck", "shit")))
 
-    #test remove
-    print(remove("hello"))
+    ##test remove
+    print(remove(7.4, 7.4))
 
 
 if __name__ == "__main__":

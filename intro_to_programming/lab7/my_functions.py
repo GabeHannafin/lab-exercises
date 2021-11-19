@@ -13,15 +13,15 @@ def list_to_string(my_list):
     finished_string = ""
     # Loop through every element in my_list
     while i < len(my_list):
-    # add the values to the finished string
+        # add the values to the finished string
         finished_string += my_list[i]
-    # increment the iterator
+        # increment the iterator
         i += 1
     # return the finished string
     return finished_string
 
 
-def count(my_list, value):
+def count(my_list=[], value="a"):
     '''
     function - count how many times <value> occurs in <my_list>
     :param list: - <my_list> input
@@ -30,6 +30,8 @@ def count(my_list, value):
     '''
     # set counter
     i = 0
+    # set second counter
+    j = 0
     # accumulator to count how many times <value> occurs
     # set to zero to cover no <value> in <list>
     num_values = 0
@@ -37,44 +39,60 @@ def count(my_list, value):
     try:
         # loop over the length of the <list>
         while i < len(my_list):
+        # Loop over the length of elements in <list>
+            while j < len(str(my_list[i])):
+                # if <value> and <list> index i are the same
+                if my_list[i][j] == str(value):
+                    # increment the accumulator
+                    num_values += 1
+                # Increment the second Iterator
+                j += 1
             # if <value> and <list> index i are the same
-            if my_list[i] == value:
+            if my_list[i] == str(value):
                 # increment the accumulator
                 num_values += 1
             # increment the counter
             i += 1
         # return how many times <value> occurs in <list>
         return num_values
-
     # If there is an error
     except Exception:
     # return the error message
         return "Houston, we have a problem!"
 
-def index(my_list, value):
+def index(my_list=[], value="a"):
     """
     Function to return the first index that value occurs in my_list
     return -1 if the value does not occur in my_list
     """
     # Set Counter
     i = 0
+    # Set second Counter
+    j = 0
     # Try
     try:
         # Loop over the length of my_list
-        while i < len(my_list):
-        # if <value> is equal to the value at index i, return i
+        while i < len(str(my_list)):
+        # Loop over the length of elements in <list>
+            while j < len(str(my_list[i])):
+                # get the correct index if <list> is a tuple
+                if my_list[i][j] == value:
+                    # return index
+                    return j  
+                # Increment the second Iterator
+                j += 1
+            # if <value> is equal to the value at index i, return i
             if my_list[i] == value:
                 return i 
-        # if <value> is not present in my_list return -1
+            # if <value> is not present in my_list return -1
             if value not in my_list:
                 return -1
-        # increment the iterator
+            # increment the iterator
             i += 1
-
     # If there is an error
-    except Exception:
-    # return the error message
-        return "Houston, we have a problem!"
+    except Exception: 
+        # return the error message
+        return "Houston, we have a problem!", e
 
 def get_value(my_list=[], index=0):
     """
@@ -88,9 +106,9 @@ def get_value(my_list=[], index=0):
     # Try
     try:
         # Loop over the length of my_list
-        while i < len(my_list):
+        while i < len(str(my_list)):
         # return the value that is at index <index>
-            return my_list[index]
+            return my_list[int(index)]
         # increment the iterator
             i += 1
 
@@ -105,15 +123,15 @@ def insert(my_list=[], index=0, value="a"):
     remember to check the length of my_list and if index is larger than the length
     add as a new index at the end
     """
-    # Cast my_list to type list
-    my_list = list(my_list)
 
     try:
+        # Cast my_list to type list
+        my_list = list(str(my_list))
         # if the index param is larger than len <list> just append it
         if index >= len(my_list):
-        # append <value> to the end of <list>
+            # append <value> to the end of <list>
             my_list.append(value)
-        # format the list to a string
+            # format the list to a string
             return(list_to_string(my_list))
 
         # else if the value is not larger than the len of my_list    
@@ -134,28 +152,27 @@ def value_in_list(my_list=[], value=""):
 
     try:
         # Loop through every element in my_list
-        while i < len(my_list):
-        # If the value is equal to value at list index i
-            if value == my_list[i]:
-        # return True
+        while i < len(str(my_list)):
+            # If the value is equal to value at list index i
+            if value == str(my_list)[i]:
+                # return True
                 return True
-        # if the loop has iterated throughtout the whole list without finding <value>
-            elif i == len(my_list)-1:
-        # return False
+            # if the loop has iterated throughtout the whole list without finding <value>
+            elif i == len(str(my_list))-1:
+                # return False
                 return False
-        # Increment the interator
+            # Increment the interator
             i +=1
-
     # if <index> is not a valid index return an error message
-    except Exception:
+    except Exception as e:
     # return error message
-        return "Houston, we have a problem!"
+        return "Houston, we have a problem!", e
 
 
-def concat(list1, list2):
+def concat(list1="", list2=""):
     # convert string input to a list
-    list1 = list(list1)
-    list2 = list(list2)
+    list1 = list(str(list1))
+    list2 = list(str(list2))
 
     # Set counter
     i = 0
@@ -164,16 +181,16 @@ def concat(list1, list2):
         # Loop to the length of list2
         while i < len(list2):
         # Append the entire contents of list2 to the end of list1
-            list1.append(list2[i])
+            list1.append(list2)
         # Increment the iterator
             i +=1
         # Return the formatted result
         return list_to_string(list1)
 
     # if <index> is not a valid index return an error message
-    except Exception:
+    except Exception as e:
     # return error message
-        return "Houston, we have a problem!"
+        return "Houston, we have a problem!", e
 
 
 def remove(value="", my_list=[]):
@@ -185,14 +202,14 @@ def remove(value="", my_list=[]):
 
     try:
         # Loop through the contents of my_list
-        while i < len(my_list):
-        # if the value is not equal to the value at index i then append it to the new list
-            if my_list[i] != value:
-                edited_list.append(my_list[i])
-        # if the value is equal to the value at index i then pass
-            elif my_list[i] == value:
+        while i < len(str(my_list)):
+            # if the value is not equal to the value at index i then append it to the new list
+            if str(my_list)[i] != str(value):
+                edited_list.append(str(my_list)[i])
+            # if the value is equal to the value at index i then pass
+            elif str(my_list)[i] == str(value):
                 pass
-        # Increment the Iterator
+            # Increment the Iterator
             i += 1
         # Return the formatted string
         return list_to_string(edited_list)
