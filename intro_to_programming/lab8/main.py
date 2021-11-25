@@ -15,7 +15,7 @@ def main():
     Call the functions defined in the functions.py file
     """
     # print_function()
-    print(while_loop(5))
+    print(while_loop((False)))
 
 
 if __name__ == "__main__":
