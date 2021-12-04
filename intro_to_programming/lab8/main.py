@@ -16,6 +16,25 @@ def main():
     """
     # print_function()
     print(while_loop((False)))
+    # 8 ball testing
+    print(magic_8_ball("Why is your hair long?", [200]))
+    print(magic_8_ball("Why is your hair long?"))
+    print(magic_8_ball("Why is your hair long?", [1, 1]))
+    print(magic_8_ball("Why is your hair long?", [1, 1]))
+    print(magic_8_ball("Why is your hair long?", [1, 1]))
+
+    # stairs testing
+    print(is_stairs([2,3,4,5]))
+    print(is_stairs([2,3,2]))
+    print(is_stairs([4]))
+    print(is_stairs([]))
+
+    print(is_stairs(["a", "b", "c"]))
+    print(is_stairs(["c", "b", "a"]))
+    print(is_stairs(["a", "B", "c"]))
+    print(is_stairs(["a", "b", "C"]))
+    print(is_stairs(["c", "B", "a"]))
+    print(is_stairs(["C", "b", "a"]))
 
 
 if __name__ == "__main__":
