@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pentesting and Hacking</title>
+  <link rel="stylesheet" href="style.css">  
+  <link rel="icon" href="img/favicon.ico">
+</head>
+<body>
+ <main>
+   <header>
+      <h1 id="heading-text"><a href="index.html">Ethical Hacking</a></h1>
+   </header>
+   <nav>
+     <ul>
+       <li><a target="_self" class="hacker-text" href="pentesting.html">Pentesting Process</a></li>
+       <li><a target="_self" class="hacker-text" href="vulnerabilities.html">Vulnerabilities</a></li>
+       <li><a target="_self" class="hacker-text" href="resources.html">Resources</a></li>
+     </ul>
+   </nav>
+   <section id="vulns">
+     <h2>Examples of common vulnerabilities</h2>
+     <article id="sql" class="content text-paragraph">
+       <h3>SQL Injection</h3>
+       <p>
+       SQL injection is a form of command injection that occurs when user input to a SQL query is not sanitised or checked properly before running.
+       </p>
+       <p>
+       Let's take this portion of SQL for example.
+       </p>
+       <code>
+         SELECT cool_chair
+         FROM chairs
+         WHERE color="red";
+       </code>
+       <p>
+       Here is a query to get a red chair. But what would happen if instead of "red" we inputted a double quote?
+       The <b>WHERE</b> clause would now look like: <code>WHERE color=""";</code>.
+       <p>
+       This is clearly invalid sql and will not execute correctly,
+       but what if we append a comment onto the end? now the <b>WHERE</b> clause looks like <code>WHERE color="" -- -";</code>.
+       </p>
+       <p>
+       This comments out the last quote and end of the statement,
+       allowing us to append more SQL onto the end.
+       </p>
+       <p>
+       We now have the ability to write SQL commands into the input field and have them be run by the server. There are now plenty of attack vectors to try out. 
+       </p>
+       <p>
+       MySQL has a <code>LOAD_FILE()</code> module
+       that could allow an attacker to read files off the system. 
+       </p>
+       <p>
+       A very common way approach is to use a "UNION" statement to run a second SQL query and extract data from other tables in the database.
+       A website will quite commonly have a users tables for storing login information that you may be able to access and retrieve password hashes from.
+       </p>
+     </article>
+     <article id="lfi" class="content text-paragraph">
+       <h3>Local File Inclusion</h3>
+       <p>
+       Similarly to SQL Injection, Local File Inclusion is caused by incorrect sanitation on user input.
+       </p>
+       <p>
+       Commonly a webserver will use a <b>GET</b> variable in the url to control what html/php file it currently is displaying.
+       the url may look like this: "https://example.com/?page=page1.html"
+       </p>
+       <p>
+       If this input is not checked properly we can simply substitute "page1.html" for "../../../../../etc/passwd" (on linux systems) for example to recieve the contents of /etc/passwd.
+       </p>
+       <p>
+       Page1.html is refering to ./page1.html in the web root of the server. Using the "../" to move up the directory tree you can access any file on the filesystem that you have permission to view.
+       </p>
+     </article>
+     <article id="upload" class="content text-paragraph">
+       <h3>Upload Vulnerabilities</h3>
+       <p>
+       A lot of websites will allow a user to upload a file of some kind. A common example is a profile picture or a thumbnail.
+       This is common practice but if configured incorrectly very dangerous.
+       </p>
+       <p>
+       What is to stop you uploading a malicious piece of code instead of a picture? Well there are a few measures put in place:
+       </p>
+       <ul class="contained-list">
+         <li>A server might have a whitelist and only allow certain extensions</li>
+         <li>A server might blacklist certain extensions</li>
+         <li>A server might check the MIME type header in the HTTP request</li>
+         <li>A server might check the magic bytes at the start of the file (used to determine file type)</li>
+       </ul>
+       <p>
+       These are examples of some of the checks that can be put in place to stop malicious files being uploaded.
+       But there is absolutely nothing stopping us editing our HTTP request before it is sent to the server with a tool
+       like <a href="https://portswigger.net/burp">BurpSuite</a> to bypass these checks.
+       </p>
+       <p>
+       If an attacker is able to bypass the upload filter they could upload a malicious php file and possibly get it to be executed by the server
+       and get RCE that way.
+       </p>
+     </article>
+   </section>
+   <aside id="sidebar">
+     <iframe src="https://gtfobins.github.io/" frameborder="0" ></iframe>
+   </aside>
+  <footer>
+    <small>Gabe Hacking &copy;</small>
+  </footer>
+ </main>
+</body>
+</html>
