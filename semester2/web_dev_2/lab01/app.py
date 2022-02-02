@@ -79,46 +79,17 @@ def rps15(player=None):
     """
     # Dict to convert random number to hand
     random_hand = {1 : "rock", 2: "fire", 3: "scissors", 4: "snake", 5:"human", 6:"tree", 7:"wolf", 8:"sponge", 9:"paper", 10: "air", 11: "water", 12:"dragon", 13:"devil", 14:"lightning", 15:"gun"}
-    # Dict to compare hands
-    beats = {
-            "rock": ["fire", "scissors", "snake", "human", "wolf", "sponge", "tree"],
-            "fire": ["scissors", "paper", "snake", "human", "tree", "wolf", "sponge"],
-            "scissors": ["air", "tree", "paper", "snake", "human", "wolf", "sponge"],
-            "snake": ["human", "wolf", "sponge", "tree", "paper", "air", "water"],
-            "human": ["tree", "wolf", "sponge", "paper", "air", "water", "dragon"],
-            "tree": ["wolf", "dragon", "sponge", "paper", "air", "water", "devil"],
-            "wolf": ["sponge", "paper", "air", "water", "dragon", "lightning", "devil"],
-            "sponge": ["paper", "air", "water", "devil", "dragon", "gun", "lightning"],
-            "paper": ["air", "rock", "water", "devil", "dragon", "gun", "lightning"],
-            "air": ["fire", "rock", "water", "devil", "gun", "dragon", "lightning"],
-            "water": ["devil", "dragon", "rock", "fire", "scissors", "gun", "lightning"],
-            "dragon": ["devil", "lightning", "fire", "rock", "scissors", "gun", "snake"],
-            "devil": ["rock", "fire", "scissors", "gun", "lightning", "snake", "human"],
-            "lightning": ["gun", "scissors", "rock", "tree", "fire", "snake", "human"],
-            "gun": ["rock", "tree", "fire", "scissors", "snake", "human", "wolf"]
-            }
-
-    # if the input is in the dictionary
-    if player.lower() in beats:
+    
         #generate computer hand
-        computer_result = random_hand[randint(1, 15)]
-        # Iterate through every item in the list of hands the computer hands beats
-        for item in beats[computer_result]:
-            # if player and computer hands are the same then it is a draw
-            if player.lower() == computer_result:
-                outcome = "It's a draw!"
-            # if the player hand is equal to any item in the list then it is beaten by the computer
-            elif player.lower() == item:
-                outcome = "Computer Wins!"
-                # have to break the loop otherwise the outcome variable is overwritten
-                break
-            # If it is not in the list then the Player must have won
-            elif player.lower() != item:
-                outcome = "Player Wins!"
-        # return the success page
-        return render_template("rps.html", outcome=outcome, player=player, computer=computer_result) 
-    else:
-        # return the error page
-        outcome = "That is not a valid hand"
-        return render_template("error.html", outcome=outcome)
+    computer_result = 1
+    computer_hand = random_hand[computer_result] 
 
+    for i in range(computer_result +1, computer_result + 8):
+        if 
+        if player == random_hand[i]:
+            outcome = "Computer WIns!"
+            break
+        else:
+            outcome = "player wins!"
+
+    return render_template("rps.html", outcome=outcome, player=player, computer=computer_hand) 
