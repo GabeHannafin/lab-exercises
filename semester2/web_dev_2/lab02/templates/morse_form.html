@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{%block content %}
+
+<form action="" method="POST">
+  <label for="message">Type your message: </label>
+  <input type="text" name="message" id="message" size="30" />
+  <br />
+  <input type="submit" />
+</form>
+{{ error  }}
+
+{%endblock%}
