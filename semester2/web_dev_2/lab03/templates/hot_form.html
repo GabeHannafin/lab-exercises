@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<form action="" method="POST" novalidate>
+
+  <h1>From:</h1>
+
+  {{ form.hidden_tag() }}
+
+  {{ form.from_field() }}
+  {{ form.input_field() }}
+  {% for error in form.input_field.errors %}
+    {{ error }}
+  {% endfor %}
+  <figure>
+      <img src="{{ url_for('static', filename='image.jpg') }}" width="150" alt="eternal pain">
+  </figure>
+
+
+
+  <h1>To:</h1>
+
+  {{ form.to_field() }}
+  {{ form.answer_field(disabled=True) }}
+  <br />
+  {{ form.submit() }}
+
+
+
+
+
+</form>
+
+<a href="{{ url_for('caesar') }}">HAIL CAESAR</a>
+{% endblock %}

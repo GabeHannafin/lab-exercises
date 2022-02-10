@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+
+{%block content%}
+
+<form action="", method="POST" novalidate>
+
+  {{ form.hidden_tag() }}
+
+  {{ form.plaintext.label() }}
+  {{ form.plaintext() }}
+  {% for error in form.plaintext.errors%}
+
+    {{ error }}
+
+  {% endfor %}
+  <br />
+  {{ form.shift.label() }}
+  {{ form.shift() }}
+
+  {% for error in form.shift.errors%}
+    {{ error }}
+  {% endfor %}
+  <br />
+  {{ form.ciphertext.label() }}
+  {{ form.ciphertext(disabled=True) }}
+  {{ form.submit() }}
+
+</form>
+<a href="{{ url_for('conversion') }}">HOT STUFF</a>
+{%endblock%}
