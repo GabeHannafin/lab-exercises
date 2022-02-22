@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="" method="POST" novalidate>
+  {{ form.hidden_tag() }}
+  {{form.country.label()}}
+  {{ form.country() }}
+  {% for error in form.country.errors %}
+    {{ error }}
+  {% endfor %}
+  {{ form.submit() }}
+</form>
+
+{% if results %}
+<table>
+  <caption>{{ caption }}</caption>
+  {% for country in results %}
+  <tr>
+    <td>{{ country["year"] }}</td>
+    <td>{{ country["country"] }}</td>
+    <td>{{ country["song"] }}</td>
+    <td>{{ country["performer"] }}</td>
+    <td>{{ country["points"] }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endif %}
+{% endblock %}
