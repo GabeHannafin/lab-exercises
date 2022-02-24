@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="" method="POST" novalidate>
+  {{ form.hidden_tag() }}
+  {{ form.country.label() }}
+  {{ form.country() }}
+  {% for error in form.country.errors %}
+    {{ error }}
+  {% endfor %}
+  {{ form.submit() }}
+</form>
+{% endblock %}
