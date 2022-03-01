@@ -6,17 +6,27 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+  <main>
     <header>
       {% block header%}
 
       {% endblock %}
     </header>
-    <main>
-        {% block content %}
+    <article class="login-form">
+        {% block article %}
 
         {% endblock %}
-    </main>
+    </article>
+    <aside>
+      {% block aside%}
+
+      {% endblock aside %}
+    </aside>
     <footer>
+      {% block footer%}
+
+      {% endblock footer%}
     </footer>
+  </main>
 </body>
 </html>
