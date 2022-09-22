@@ -1,0 +1,25 @@
+{% extends "base.html"%}
+
+
+{% block article%}
+<h1>Add a new trained killer!!!</h1>
+<form action="" method="POST" novalidate>
+    {{ form.hidden_tag() }}
+    {{ form.name.label()}}
+    {{ form.name() }}
+    {% for error in form.name.errors %}
+        {{ error }}
+    {% endfor%}
+    <br>
+    {{ form.description.label() }}
+    <br>
+    {{ form.description() }}
+    {% for error in form.description.errors %}
+        {{ error }}
+    {% endfor%}
+    <br>
+    {{ form.submit() }}
+    
+</form>
+
+{% endblock %}

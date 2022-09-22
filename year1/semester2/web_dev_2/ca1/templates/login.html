@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+
+{% block header %}
+<h1>WElcome!</h1>
+{% endblock %}
+
+{% block article%}
+<form action="" method="POST" novalidate class="content">
+    {{ form.hidden_tag() }}
+    {{ form.user_name.label() }}
+    {{form.user_name()}}
+    {% for error in form.user_name.errors %}
+        {{ error }}
+    {% endfor%}
+    <br>
+
+    {{ form.password.label() }}
+    {{form.password()}}
+    {% for error in form.password.errors %}
+        {{ error }}
+    {% endfor%}
+    <br>
+    
+    {{ form.submit() }}
+    
+</form>
+{% endblock%}

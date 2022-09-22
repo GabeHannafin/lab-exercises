@@ -1,0 +1,44 @@
+{% extends "base.html"%}
+
+
+{% block aside %}
+        {%if number != -1%}
+            <h2> you have chosen {{ hitmen[number]["name"] }}</h2>
+        {% endif %}
+        {% if next_button %}
+            <button type="button" class="button" ><a href="{{ url_for('order') }}">Next</a></button>
+        {% endif %}
+        {% if g.user and orders%}
+        <h2>Your order status</h2>
+        <table>
+            <tr>
+                <th>Target</th>
+                <th>Status</th>
+            </tr>
+        {% for order in orders%}
+            <tr>
+                <td>{{ orders[order]["target_name"] }}</td>
+                <td>{{ orders[order]["status"] }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+        {% endif %}
+     
+
+
+{% endblock %}
+
+{% block article%}
+
+{% for hitman in hitmen %}
+    <section id="{{ hitman["name"] }}">
+    <img src="{{ url_for("static", filename=hitman["name"]) }}.jpg" alt="">
+    <p>{{ hitman["description"] }}</p>
+    <button  type="button"class="button"><a href="{{ url_for('add_to_cart',  hitman_id=hitman['id']) }}">Select</a></button>
+    {% if g.user == "admin"%}
+    <button  type="button"class="button"><a href="{{ url_for('remove',  hitman_id=hitman['id']) }}">Remove</a></button>
+    {% endif %}
+
+    </section>
+{% endfor %}
+{% endblock %}

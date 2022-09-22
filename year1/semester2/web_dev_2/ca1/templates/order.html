@@ -1,0 +1,64 @@
+{% extends "base.html"%}
+
+
+{% block aside%}
+<h2>Your chosen killer</h2>
+<img src="{{ url_for('static', filename=hitmen[number]["name"]) }}.jpg" alt="Your Hitmen">
+{% endblock %}
+{% block article %}
+<form action="" method="POST" novalidate>
+  {{ form.hidden_tag() }}
+  <br>
+  <h2>Target Details</h2>
+  {{ form.target.label() }}
+  {{ form.target() }}
+  {% for error in form.target.errors %}
+        {{ error }}
+  {% endfor %}
+  <br>
+  {{ form.suffering.label() }}
+  {{ form.suffering() }}
+  {% for error in form.suffering.errors %}
+        {{ error }}
+  {% endfor %}
+  <br>
+  {{ form.address.label() }}
+  {{ form.address() }}
+  {% for error in form.address.errors %}
+        {{ error }}
+  {% endfor %}
+  <br>
+  <h2>Payment Details</h2>
+  {{ form.ppsn.label() }}
+  {{ form.ppsn() }}
+  {% for error in form.ppsn.errors %}
+        {{ error }}
+  {% endfor %}
+  <br>
+  {{ form.your_name.label() }}
+  {{ form.your_name() }}
+  {% for error in form.your_name.errors %}
+        {{ error }}
+  {% endfor %}
+  <br>
+  {{ form.card_number.label() }}
+  {{ form.card_number() }}
+  {% for error in form.card_number.errors %}
+        {{ error }}
+  {% endfor %}
+  <br>
+  {{ form.expiry_date.label() }}
+  {{ form.expiry_date() }}
+  {% for error in form.expiry_date.errors %}
+        {{ error }}
+  {% endfor %}
+  <br>
+  {{ form.cvv.label() }}
+  {{ form.cvv() }}
+  {% for error in form.cvv.errors %}
+        {{ error }}
+  {% endfor %}
+  <br>
+  {{ form.submit() }}
+</form>
+{% endblock %}
